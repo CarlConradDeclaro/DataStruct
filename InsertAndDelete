@@ -1,56 +1,52 @@
-import java.util.*;
+ 
 public class Main
 {
 	public static void main(String[] args) {
-	 
-	    int c = 15;  
-        int[] arr =new int[c];
-	    arr[0] = 12;
-        arr[1] = 16;
-        arr[2] = 20;
-        arr[3] = 40;
-        arr[4] = 50;
-        arr[5] = 70;
 	
-     int n = 6;
-     int x = 26;
-     int pos = 2;
-      
-      
-  for (int i = n - 1; i >= pos; i--){
-       arr[i + 1] = arr[i];
-  }
-        arr[pos] = x;
-      
-      
-      n += 1;
- 
-        System.out.print("\n\nAfter Insertion: ");
-        for (int i = 0; i <n; i++)
-            System.out.print(arr[i] + " ");
-            
-            
-            
-         int delete = 12;
-         int whatIndex = 0;
-         for (int i = 0; i <n; i++){
-             if(arr[i] == delete)
-               whatIndex = i;
-         }
+	
+	  int[] arr = new int[10];
+	 
+        arr[0] = 1;
+        arr[1] = 2;
+        arr[2] = 4;
+        arr[3] = 5;
+        arr[4] = 6;
+        arr[5] = 7;
+        arr[6] = 8;
         
-         for (int i = whatIndex; i <n; i++){
-               arr[i] = arr[i+1];
-         }    
-   
-          System.out.println("\n\nArray after deletion");
-            for (int i = 0; i < arr.length; i++)
-                System.out.print(arr[i] + " ");
+      int n = 7;
+      int pos = 3;
+      int insertNum = 30;
+      int delete = 7;
+      insert(arr,pos,n,insertNum);
+      delete(arr,pos,n,delete);
 
-            
-            
-        
-            
-            
-            
+     for(int i=0;i<n;i++){
+                 System.out.println(arr[i]); 
+        }
+     
+    	
 	}
+	
+	
+	  static void insert(int[] arr, int pos, int n, int insertNum){
+         for(int i=n;i>pos;i--){
+                  arr[i] = arr[i-1];
+            }
+             arr[pos] = insertNum;
+	}
+	
+	
+	
+	  static void delete(int[] arr, int pos, int n, int delete){
+             
+              for(int i=delete;i<n;i++){
+                      arr[i] = arr[i+1];
+                }
+                arr[n] = 0;
+	}
+	
+	
+	
 }
+
