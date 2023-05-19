@@ -1,0 +1,13 @@
+ public class Main {
+    public static void main(String[] args){
+        String input = "";
+        String holder = "";
+              while(input.length() != 0){
+                   String q = input.substring(0,1);
+                   String w = input.replaceAll(q,"");
+                   input = w;
+                   holder+=q;
+               }
+System.out.println(holder);
+    }
+}
