@@ -1,0 +1,52 @@
+ import java.util.Scanner;
+ 
+ 
+public class Main
+{
+    Node head;
+    class Node{
+        int data;
+        Node next;
+        
+        Node(int data){
+            this.data = data;
+            next = null;
+        }
+    }
+    
+    public void insert(int insert){
+        Node ld = new Node(insert);
+        ld.next = head;
+        head= ld;
+    }
+    
+    public void print(){
+        Node current = head;
+        while(current!=null){
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+    }
+      
+	public static void main(String[] args) {
+	Main ld = new Main();
+
+
+    Scanner sc = new Scanner(System.in);
+   
+     System.out.println("Enter -1 to exist");
+    int value = 0;
+     do{
+        System.out.print("\nPlease Insert a value: ");
+         value = sc.nextInt();
+        
+        if(value > 0){
+               System.out.print("LinkedList: ");
+               ld.insert(value);
+               ld.print();
+        } 
+        
+       }while(value > 0);
+
+	}
+}
