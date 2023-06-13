@@ -1,0 +1,77 @@
+
+ 
+ class ArrayList{
+
+         int capacity = 10;
+         int r = increameant();
+         int x =0;
+         int size=0;   
+         int arr[] = new int[capacity+r];
+        
+     public  void insertSort(int num){
+         arr[x] = num;
+         capacity*=2;
+         increameant();
+         x++;
+     }
+     
+     // to increameant the capacity 
+     int increameant(){
+         capacity*=2;
+         return capacity;
+     }
+     
+     
+
+     public void  display(){
+              // to sort the arr
+             for (int i = 0; i < arr.length - 1; i++) {
+                for (int j = i + 1; j < arr.length; j++) {
+                    if (arr[i] > arr[j] && arr[i] > 0 ) {
+                        // Swap elements
+                        int temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+          
+            
+             //prints out the array    
+              for(int element : arr){
+                 if(element > 0)
+                    System.out.print(element + " ");
+        }
+    }
+}
+ 
+ 
+ 
+public class Main
+{
+	public static void main(String[] args) {
+	 // [1, 2, 5, 8] 
+	
+	 ArrayList list = new ArrayList();
+      
+      
+      list.insertSort(1);
+      list.insertSort(8);
+      list.insertSort(2);
+      list.insertSort(9);
+      list.insertSort(3);
+      list.insertSort(4);
+      list.insertSort(5);
+      list.insertSort(7);
+      list.insertSort(2);
+      list.insertSort(9);
+      list.insertSort(3);
+      list.insertSort(4);
+      list.insertSort(5);
+      list.insertSort(7);
+     
+      
+     list.display();
+      
+	}
+}
