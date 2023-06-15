@@ -1,4 +1,6 @@
- public class Main {
+
+//for String
+public class Main {
     public static void main(String[] args){
         String input = "";
         String holder = "";
@@ -11,3 +13,5 @@
 System.out.println(holder);
     }
 }
+
+
