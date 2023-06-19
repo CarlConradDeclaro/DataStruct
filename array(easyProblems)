@@ -1,0 +1,148 @@
+  
+ 
+ public class Main {
+    public static void main(String[] args){
+       
+    int arr[] = {10, 90, 49, 2, 1, 5, 23};
+    //  2 1 4 3 6 5 8 7 10 9
+    // sort(arr);
+    // System.out.print("Sort: ");
+    // for(int i:arr){
+    //     System.out.print(i+" ");
+    // }
+   
+    // System.out.println("\nThree greatest number: " + arr[arr.length-1] + "," + arr[arr.length-2] + "," + arr[arr.length-3]);
+     
+     
+    //  moveZero(arr);
+     
+     //arrayEvenAndOdd(arr);
+     //   reversalAlgo(arr,2);
+     SortWave(arr);
+     }
+     
+     //  1 2 3 4 5 6 7 8 9 10
+     static void SortWave(int[] arr){
+       
+        sort(arr);
+         
+         for(int i=0;i<arr.length-1;i+=2){
+             int temp = arr[i];
+             arr[i] = arr[i+1];
+             arr[i+1] = temp;
+         }
+         
+         for(int i: arr){
+             System.out.print(i + " ");
+         }
+     }
+     
+     
+    // 1 2 3 4 5 6 7 8 9 10                 2
+    static void reversalAlgo(int[] arr, int d){
+        int i=0;
+        int x =0;
+        int n = arr.length-1;
+       int newArr[] = new int[d]; 
+       while(i<d){
+           newArr[i] = arr[i];
+           i++;
+       }
+
+        while(d<arr.length){
+            arr[x] = arr[d];
+            d++;
+            x++;
+        }
+        
+        int b = 0;
+        while (x < arr.length) {
+           arr[x] = newArr[b];
+            b++;
+            x++;
+        }
+        
+        
+      for(int v:arr){
+          System.out.print(v+" ");
+      }
+         
+        
+        
+        
+    }
+    
+    
+    static void arrayEvenAndOdd(int[] arr){
+        
+        int index = 0;
+        int A[] = new int[arr.length];
+        for(int i=0; i<arr.length;i++){
+            if(arr[i]%2 == 0){
+                A[index] = arr[i];
+                 index++;
+            }
+        }
+        
+        for(int i=0; i<arr.length;i++){
+            if(arr[i]%2 != 0){
+                A[index] = arr[i];
+                 index++;
+            }
+        }
+        
+         for(int i: A)
+        System.out.print(i + " ");
+        
+    }
+    
+    
+    static void moveZero(int[] arr){
+        int count =0;
+        
+        for(int i=0; i<arr.length;i++){
+            if(arr[i] != 0){
+                arr[count] = arr[i];
+                count++;
+            }
+          
+        }
+        
+        while(count < arr.length){
+            arr[count++] = 0;
+        }
+        
+        System.out.print("Move zero to the last: ");
+        for(int i: arr)
+          System.out.print(i + " ");
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    }
+    
+    
+    
+    
+    
+    static int[] sort(int[] arr){
+        // 5 4 3 2 1
+         for(int i=0; i < arr.length-1;i++){
+         for(int j=i+1; j<arr.length;j++){
+              if(arr[i] > arr[j]){
+                  int temp = arr[j];
+                  arr[j] = arr[i];
+                  arr[i] = temp;
+              }
+         }
+    }
+    return arr;
+        
+    } 
+    
+}
