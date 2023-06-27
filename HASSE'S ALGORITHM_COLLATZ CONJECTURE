@@ -1,0 +1,17 @@
+ 
+public class Main
+{
+	public static void main(String[] args) {
+	 
+	 int num = 411111115;
+     int result =0; 
+      while(true){
+          if(num%2 == 1){
+              result=num*3+1;
+              num = result;
+          }else
+              num/=2;
+           System.out.println(num);
+      }
+	}
+}
