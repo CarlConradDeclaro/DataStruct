@@ -1,0 +1,18 @@
+import java.util.*;
+ 
+public class Main
+{
+	public static void main(String[] args) {
+      
+          char[] array = {'o' };
+          //   char array = 'o' ;
+          char expectableLetter = array[0];
+       
+          System.out.println(expectableLetter++);
+       
+          System.out.println(expectableLetter++);
+          System.out.println(expectableLetter++);
+          System.out.println(expectableLetter++);
+      
+  }
+}
