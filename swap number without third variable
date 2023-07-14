@@ -1,0 +1,25 @@
+ 
+public class Main {
+    public static void main(String[] args)
+    {
+        
+       
+       int m = 9;
+       int n= 5;
+        swap(m,n);
+  
+    }
+   static  void swap(int m, int n){
+        m = m-n; // 4
+        n = m+n; // 9
+        m = n-m; //5
+        
+    System.out.println("m = " + m + ", n = " + n);
+        
+        
+        
+    }
+    
+    
+    
+}
