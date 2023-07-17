@@ -1,0 +1,72 @@
+
+public class Main
+{
+    Node head;
+    
+    class Node{
+        int data;
+        Node next;
+        
+          Node(int data){
+            this.data = data;
+            next =  null;
+        }
+    }
+    //How to Insert a Node at the Front/Beginning of Linked List
+    public void push(int newData){
+        Node node = new Node(newData);
+        node.next = head;
+        head = node;
+    }
+    
+    //How to Insert a Node at the End of Linked List
+    public void append(int newData){
+        
+        Node newNode =  new Node(newData);
+        
+        if(head == null){
+            head = newNode;
+            
+        }
+        
+        Node current = head;
+        while(current.next != null){
+            current = current.next;
+        }
+        
+        current.next = newNode;
+        
+    }
+    
+    
+    
+    public void print(){
+        Node current = head;
+        
+        while(current!= null){
+            System.out.print(current.data+ " ");
+            current = current.next;
+            
+        }
+    }
+        
+        
+    
+	public static void main(String[] args) {
+	 Main node =  new Main();
+	 
+	 node.push(6);
+	 node.push(5);
+	 node.push(4);
+	 node.push(3);
+	 node.push(2);
+	 node.push(1);
+	 node.append(90);
+	 node.append(80);
+	 node.push(100);
+	 node.print();
+ 
+	
+	
+	}
+}
