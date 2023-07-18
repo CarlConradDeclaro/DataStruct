@@ -1,0 +1,65 @@
+
+
+public class Main
+{
+    Node head;
+    
+    class Node{
+        
+        int data;
+        Node next;
+        
+        Node(int data){
+            this.data = data;
+            next = null;
+        }
+    }
+    
+    public void add(int data){
+        Node node = new Node(data);
+        
+        node.next = head;
+        head = node;
+    }
+    
+    //Deletion in Linked List
+    public void deleteFirst(){
+        Node temp =  head;
+        head = head.next;
+        temp.next = null;
+        return;
+    }
+    
+    
+    
+     public void print(){
+         
+         
+         Node current = head;
+         
+         while(current != null){
+             System.out.print(current.data + " ");
+             current = current.next;
+         }
+         
+         
+     }
+    
+ 
+	public static void main(String[] args) {
+      
+      
+      Main list = new Main();
+      
+      
+      list.add(1);
+      list.add(2);
+      list.add(3);
+      list.add(4);
+      
+      
+      list.deleteFirst();
+      list.print();
+ 
+	}
+}
