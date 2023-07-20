@@ -1,0 +1,69 @@
+ 
+class Main {
+    
+    Node head;
+ 
+    class Node{
+        int id;
+        int level;
+        String name;
+        Node next;
+   
+        Node(int id,int level,String name){
+            this.id = id;
+            this.level= level;
+            this.name = name;
+            next = null;
+        }
+    }
+    
+     public  void add(int id,int level,String name){
+         Node node = new Node(id,level,name);
+         node.next =  head;
+         head =  node;
+     } 
+    
+    
+     
+    public void levelUp(int id){
+       Node current =  head;
+   
+        while(current != null){
+            
+            if(current.id == id){
+                current.level++;
+            }
+             current = current.next;
+        }
+       
+    }
+    
+    
+    public void print(){
+        Node current =  head;
+        while(current != null){
+            System.out.println(current.id + ", " + current.level + ", " + current.name);
+            current = current.next;
+        }
+        
+    }
+    
+ 
+    public static void main(String[] args)
+    {
+      
+      Main list = new Main();
+      
+      list.add(9807,1,"carl");
+      list.add(1234,1,"conrad");
+      
+      list.levelUp(9807);
+      list.print();
+       
+      list.levelUp(1234);
+         
+      list.print();
+       
+     
+    }
+}
