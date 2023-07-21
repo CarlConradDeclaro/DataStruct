@@ -1,0 +1,13 @@
+import java.util.regex.*;
+class Main {
+ 
+    public static void main(String[] args)
+    {
+        String replacedWord = word.replace(String.valueOf(c), "");
+        int count = word.length() - replacedWord.length();
+        
+           System.out.println(count);
+
+
+  }
+}
