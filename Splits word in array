@@ -1,0 +1,13 @@
+class Main {
+ 
+    public static void main(String[] args)
+    {
+        String sentence = "This is a sample sentence";
+        String[] characters = sentence.split(" "); // Split the sentence into individual characters
+        for (String character : characters) {
+            System.out.println(character);
+        }
+      
+    
+    }  
+}
