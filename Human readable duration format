@@ -1,0 +1,73 @@
+ 
+public class Main
+{
+	public static void main(String[] args) {
+	 long i = 32270400  ;
+
+ 
+   
+   
+   
+   	 long x = i/60;
+	 long hours = x/60;
+	 long minutes = x%60;
+	 long seconds = i  %60; 
+   
+  	 String hour  = hours >1 ? "hours" : "hour";
+	 String minute = minutes > 1 ? "minutes" : "minute";
+	 String second = seconds > 1 ? "seconds" : "second";
+        
+        String time="";
+   
+         if(hours == 0 && minutes == 0)
+    	   time = seconds + " " + second;
+    	 if(hours == 0 && minutes != 0 && seconds != 0)
+    	  time = minutes +" " + minute + " and " + seconds +" "+ second;
+    	 if(hours ==0 && seconds == 0 )
+    	  time = minutes + " " + minute;
+    	 
+    	 if(minutes == 0 && seconds == 0 )
+    	   time  = hours +" "+ hour;
+    	   
+    	  if(minutes ==0 && seconds != 0 && hours != 0)
+    	    time = hours +" "+hour+" and "+seconds + " " + second; 
+    	    
+    	  if(hours != 0 && minutes != 0 && seconds == 0  )  
+    	    time = hours + " " + minute +  " and " + minutes + " " + minute;
+    	 if(hours != 0 && minutes != 0 && seconds != 0)
+    	   time = hours +" "+hour+", " + minutes + " " + minute + " and " + seconds + " " + second;
+  
+     long years = 0;
+     long days = 0; 
+     long hs =0;
+    
+     
+      if(hours > 24){
+           
+         years = i /31557600;
+         days =  i % 31557600 / 86400;
+       
+         
+          String year = years>1 ? "years":"year";
+          String day =  days>1 ? "days" : "day";
+          String Hr = hs >1 ? "hours" : "hour";
+          
+          
+          if(years != 0 && days == 0)
+             time = years + " " + year;
+          if(years != 0 && days != 0)
+             time = years + " " + year + " and " + days +" "+ day;
+             
+          if(years != 0 && days != 0  && hs != 0)
+             time = years + " " + year + ", " + days +" "+ day +" and "+ hs + " "+ Hr;    
+           
+      }
+  
+            
+       System.out.println(time.trim());
+    
+ // 1 year and 8 days  and 6 hours
+    
+    
+	}
+}
