@@ -1,0 +1,66 @@
+class LinkedList{
+    LinkedList head;
+
+    
+          int data;
+          LinkedList next;
+          
+          LinkedList(){
+           this.data = data;
+          LinkedList node =null;
+          }
+        
+   
+    
+    void push(int data){
+        LinkedList node = new LinkedList();
+        node.data = data;
+        node.next = head;
+        head= node;
+        
+    }
+    
+    // remove data in any given value
+    void remove(int data){
+        LinkedList current = head;
+        LinkedList temp = null; 
+        while(current != null && current.data != data){
+              temp = current;
+              current = current.next;
+        } 
+         
+         temp.next = current.next;
+        
+    }
+
+    
+    void print(){
+        LinkedList current = head;
+        while(current != null){
+            System.out.println(current.data);
+             current = current.next;
+        }
+       
+    }
+    
+    
+}
+
+
+public class Main
+{
+	public static void main(String[] args) {
+	 
+	   LinkedList list = new LinkedList();
+	   list.push(1);
+	   list.push(2);
+	   list.push(3);
+	   list.push(5);
+ 
+
+	   list.remove(2);
+	   
+	   list.print();
+	   
+	}
+}
