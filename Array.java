@@ -37,12 +37,21 @@ class MyArray implements Arrays{
 
     @Override
     public  void remove(int index) {
-        int x =0;
-          for(int i=0;i<index;i++){
-                            
-             arr[x] = arr[i];
-             x++;
+       
+         setCount(getCount()-1);// decrease the size of the array because we're going to remove 1 element
+         int n =getCount();
+         int last = arr[getCount()];  
+         int j=0;
+          for(int i=0;i<n;i++){
+              if(i != index){
+                arr[j] =arr[i];              
+                j++;
+              }   
           }
+           arr[j] = last;
+    
+        
+          
           
     }
 
@@ -178,9 +187,11 @@ public class Array {
             //  myArray.viewArray( );
             //  myArray.edit(1, 100);
             //  myArray.viewArray();
-             myArray.remove(5);
+             myArray.remove(6);
              myArray.viewArray();
-        
+             myArray.add(100);
+             myArray.viewArray();
+             
       
     }
 }
