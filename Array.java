@@ -1,7 +1,7 @@
 interface Arrays{
         void add(int data); //add element to the array
         void viewArray();//view an element if present in the array
-         void remove(int index);//remove an element from the array
+        void remove(int index);//remove an element from the array
         void search(int data);//search for an element in the array
         void ascendingSort(); //sort an array in  ascending way
         void descendingSort();//sort an array in descending way
@@ -31,16 +31,13 @@ class MyArray implements Arrays{
             } 
             System.out.println();
         }
-    
-
-
 
     @Override
     public  void remove(int index) {
        
-         setCount(getCount()-1);// decrease the size of the array because we're going to remove 1 element
-         int n =getCount();
-         int last = arr[getCount()];  
+         setCount(getCount()-1);// decrease the Count of the array because we're going to remove 1 element
+         int n =getCount();//
+         int last = arr[getCount()];  // get the lst element 
          int j=0;
           for(int i=0;i<n;i++){
               if(i != index){
@@ -48,20 +45,9 @@ class MyArray implements Arrays{
                 j++;
               }   
           }
+          // put the last element here after iterationg the updated elements of the array
            arr[j] = last;
-    
-        
-          
-          
     }
-
-
-
-
-
-
-
-
 
     @Override
     public void search(int data) {
@@ -104,9 +90,7 @@ class MyArray implements Arrays{
 	         int x = arr[min]; 
 	         arr[min] = arr[i];  
 	         arr[i] = x; 
-	     }
-        
-        
+	     }              
     }
 
     @Override
@@ -127,41 +111,26 @@ class MyArray implements Arrays{
     @Override
     public void edit(int index, int data) {
               arr[index] = data; 
-    }
-
-     
+    }  
     public int[] getArr() {
         return arr;
     }
-
+  
     public void setArr(int[] arr) {
         this.arr = arr;
     }
-
     public int getSize() {
         return size;
     }
-
     public void setSize(int size) {
         this.size = size;
     }
-
     public int getCount() {
         return count;
     }
-
     public void setCount(int count) {
         this.count = count;
     }
-
-    
-
-
-
-   
-
-
-
 }
 
 
@@ -170,9 +139,8 @@ public class Array {
     public static void main(String[] args) {
         MyArray myArray = new MyArray(10);
      
-        myArray.add(1);
-       
-        myArray.add(2);
+         myArray.add(1);      
+         myArray.add(2);
          myArray.add(3);
          myArray.add(4);
          myArray.add(5);
@@ -190,9 +158,7 @@ public class Array {
              myArray.remove(6);
              myArray.viewArray();
              myArray.add(100);
-             myArray.viewArray();
-             
-      
+             myArray.viewArray();                  
     }
 }
 
