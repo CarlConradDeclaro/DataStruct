@@ -1,12 +1,12 @@
 interface Arrays{
         void add(int data); //add element to the array
-        void view(int data);//view an element if present in the array
-        void remove(int data);//remove an element from the array
+        void viewArray();//view an element if present in the array
+        void remove(int index);//remove an element from the array
         void search(int data);//search for an element in the array
-        void ascendingSort(int[] arr); //sort an array in  ascending way
-        void descendingSort(int[] arr);//sort an array in descending way
-        void edit(int index);//edit an element in the array
-        void displayArray(int[] my_array);
+        void ascendingSort(); //sort an array in  ascending way
+        void descendingSort();//sort an array in descending way
+        void edit(int index,int data);//edit an element in the array
+        
 }
 
 class MyArray implements Arrays{
@@ -25,45 +25,89 @@ class MyArray implements Arrays{
     }
 
     @Override
-    public void view(int data) {
-         
-    }
-
+        public void viewArray(  ) {
+            for(int i=0; i<getCount();i++){
+                System.out.print(arr[i]+" ");
+            } 
+            System.out.println();
+        }
+    
     @Override
-    public void remove(int data) {
-      
+    public void remove(int index) {
+          for(int i=0;i<getCount();i++){
+            if(i == index)
+            continue;
+            arr[i] = arr
+          }
     }
 
     @Override
     public void search(int data) {
-      
-    }
-
-    @Override
-    public void ascendingSort(int[] arr) {
+       int low =0;
+       int high = arr.length-1;
          
+            while(low<=high){
+                int mid1 = low+ (high-low)/3;
+                int mid2 = high- (high-low)/3;
+
+                    if(data == arr[mid1]){
+                        System.out.println("Element: " + data + " is present in index: " + mid1);
+                        return;
+                    }
+                    if(data == arr[mid2]){
+                        System.out.println("Element: " + data + " is present in index: " + mid2);
+                        return;
+                    }
+                    if(data < arr[mid1]){
+                        high = mid1-1;
+                    }else if(data > arr[mid2]){
+                        low = mid2+1;
+                    }else{
+                        high = mid2-1;
+                        low = mid1+1;
+                    }
+               } 
+       System.out.println(data + " not found");   
     }
 
     @Override
-    public void descendingSort(int[] arr) {
-      
-    }
-
-    @Override
-    public void edit(int index) {
+    public void ascendingSort() {
        
+	     for(int i=0;i<getCount();i++){
+	         int min=i; // 7
+	         for(int j=i+1;j<getCount();j++){
+	             if(arr[j]<arr[min])
+	               min = j;
+	         }
+	         int x = arr[min]; 
+	         arr[min] = arr[i];  
+	         arr[i] = x; 
+	     }
+        
+        
     }
 
-    //Prints the elements stored in the array.
     @Override
-    public void displayArray(int[] my_array) {
-        // the number of element printed depends on how many times the add() have been called 
-        // to prevent printing empty indices 
-        for(int i=0; i<getCount();i++){
-            System.out.print(my_array[i]+" ");
-        }
+    public void descendingSort( ) {
+          
+        for(int i=0;i<getCount();i++){
+	         int min=i; // 7
+	         for(int j=i+1;j<getCount();j++){
+	             if(arr[j]>arr[min])
+	               min = j;
+	         }
+	         int x = arr[min]; 
+	         arr[min] = arr[i];  
+	         arr[i] = x; 
+	     }
     }
 
+    @Override
+    public void edit(int index, int data) {
+              arr[index] = data; 
+    }
+
+     
     public int[] getArr() {
         return arr;
     }
@@ -88,6 +132,8 @@ class MyArray implements Arrays{
         this.count = count;
     }
 
+    
+
 
 
    
@@ -101,10 +147,23 @@ public class Array {
     
     public static void main(String[] args) {
         MyArray myArray = new MyArray(10);
-        myArray.add(1);
-        myArray.add(2);
-        myArray.add(0);
+     
+        myArray.add(14);
        
-        myArray.displayArray(myArray.arr);
+        myArray.add(16);
+         myArray.add(12);
+         
+    
+             myArray.viewArray( );
+             myArray.ascendingSort( );
+             myArray.viewArray( );
+             myArray.descendingSort();
+             myArray.viewArray( );
+             myArray.edit(1, 100);
+             myArray.viewArray();
+        
+      
     }
 }
+
+
