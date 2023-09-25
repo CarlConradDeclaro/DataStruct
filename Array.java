@@ -1,7 +1,7 @@
 interface Arrays{
         void add(int data); //add element to the array
         void viewArray();//view an element if present in the array
-        void remove(int index);//remove an element from the array
+         void remove(int index);//remove an element from the array
         void search(int data);//search for an element in the array
         void ascendingSort(); //sort an array in  ascending way
         void descendingSort();//sort an array in descending way
@@ -32,14 +32,27 @@ class MyArray implements Arrays{
             System.out.println();
         }
     
+
+
+
     @Override
-    public void remove(int index) {
-          for(int i=0;i<getCount();i++){
-            if(i == index)
-            continue;
-            arr[i] = arr
+    public  void remove(int index) {
+        int x =0;
+          for(int i=0;i<index;i++){
+                            
+             arr[x] = arr[i];
+             x++;
           }
+          
     }
+
+
+
+
+
+
+
+
 
     @Override
     public void search(int data) {
@@ -148,18 +161,24 @@ public class Array {
     public static void main(String[] args) {
         MyArray myArray = new MyArray(10);
      
-        myArray.add(14);
+        myArray.add(1);
        
-        myArray.add(16);
-         myArray.add(12);
+        myArray.add(2);
+         myArray.add(3);
+         myArray.add(4);
+         myArray.add(5);
+         myArray.add(6);
+         myArray.add(7);
          
     
-             myArray.viewArray( );
-             myArray.ascendingSort( );
-             myArray.viewArray( );
-             myArray.descendingSort();
-             myArray.viewArray( );
-             myArray.edit(1, 100);
+            //  myArray.viewArray( );
+              myArray.ascendingSort( );
+            //  myArray.viewArray( );
+            //  myArray.descendingSort();
+            //  myArray.viewArray( );
+            //  myArray.edit(1, 100);
+            //  myArray.viewArray();
+             myArray.remove(5);
              myArray.viewArray();
         
       
