@@ -63,7 +63,7 @@ class MyArray implements Arrays{
           }
           // put the last element here after iterationg the updated elements of the array
            arr[j] = last;       
-           System.out.println("\n+++"+arr[index--] + " has been removed+++");
+          System.out.println("\n+++Removed Successfuly+++");
     }
 
     @Override
