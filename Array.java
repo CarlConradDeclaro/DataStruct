@@ -45,7 +45,7 @@ class MyArray implements Arrays{
     @Override
     public void remove(int index) {
          
-          if(index > getSize()-1){
+          if(index > getCount()-1){
                  System.out.println("<<<"+index + " is OutOfBounds>>>");
                  return;
              }
