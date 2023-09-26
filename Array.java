@@ -1,3 +1,5 @@
+ 
+
 interface Arrays{
         void add(int data); //add element to the array
         void viewArray();//view an element if present in the array
@@ -22,6 +24,7 @@ class MyArray implements Arrays{
     public void add(int data) {
        arr[count] =data;
        count++;
+       System.out.println("New element added");
     }
 
     @Override
@@ -47,6 +50,7 @@ class MyArray implements Arrays{
           }
           // put the last element here after iterationg the updated elements of the array
            arr[j] = last;
+           System.out.println(arr[index] + " has been removed");
     }
 
     @Override
@@ -59,11 +63,11 @@ class MyArray implements Arrays{
                 int mid2 = high- (high-low)/3;
 
                     if(data == arr[mid1]){
-                        System.out.println("Element: " + data + " is present in index: " + mid1);
+                        System.out.println("Element: " + data + " is present at index: " + mid1);
                         return;
                     }
                     if(data == arr[mid2]){
-                        System.out.println("Element: " + data + " is present in index: " + mid2);
+                        System.out.println("Element: " + data + " is present at index: " + mid2);
                         return;
                     }
                     if(data < arr[mid1]){
@@ -90,7 +94,8 @@ class MyArray implements Arrays{
 	         int x = arr[min]; 
 	         arr[min] = arr[i];  
 	         arr[i] = x; 
-	     }              
+	     }   
+        System.out.println("The array has been sorted ascendingly");           
     }
 
     @Override
@@ -106,12 +111,15 @@ class MyArray implements Arrays{
 	         arr[min] = arr[i];  
 	         arr[i] = x; 
 	     }
+         System.out.println("The array has been sorted descendingly.");           
     }
 
     @Override
     public void edit(int index, int data) {
-              arr[index] = data; 
+             System.out.println("Element "+ arr[index] + " has been change to " +data);
+             arr[index] = data; 
     }  
+
     public int[] getArr() {
         return arr;
     }
@@ -137,28 +145,12 @@ class MyArray implements Arrays{
 public class Array {
     
     public static void main(String[] args) {
+
+         System.out.println("Welcome enter desired size for your array");
+
         MyArray myArray = new MyArray(10);
      
-         myArray.add(1);      
-         myArray.add(2);
-         myArray.add(3);
-         myArray.add(4);
-         myArray.add(5);
-         myArray.add(6);
-         myArray.add(7);
-         
-    
-            //  myArray.viewArray( );
-              myArray.ascendingSort( );
-            //  myArray.viewArray( );
-            //  myArray.descendingSort();
-            //  myArray.viewArray( );
-            //  myArray.edit(1, 100);
-            //  myArray.viewArray();
-             myArray.remove(6);
-             myArray.viewArray();
-             myArray.add(100);
-             myArray.viewArray();                  
+                  
     }
 }
 
