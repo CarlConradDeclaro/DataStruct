@@ -33,6 +33,7 @@ class MyArray implements Arrays{
             for(int k=0; k<getCount();k++){
                 bars+="+-+-";
             } 
+            //print array
             System.out.println("\n\n"+bars);
             for(int i=0; i<getCount();i++){
                 System.out.print(" "+arr[i]+" ");
@@ -145,7 +146,8 @@ class MyArray implements Arrays{
     boolean isEmpty(){
         return getCount() == 0 ? true : false;
     }
-    boolean isFull(){
+    boolean isFull( ){
+       
         return getCount() > getSize()-1 ? true : false;
     }
   
@@ -185,62 +187,52 @@ public class Array {
             int operation  = sc.nextInt();
             switch(operation){
                 case 1 :
-                    if(myArray.isFull()){
-                        System.out.println("\n<<<Array is Full!>>>");
+                        if(myArray.isFull())
+                            System.out.println("\n<<<Array is Full!>>>");                   
+                        else{
+                            System.out.print("Enter Element: ");
+                            myArray.add(sc.nextInt());
+                        }
                         break;
-                    }else{
-                      System.out.print("Enter Element: ");
-                      myArray.add(sc.nextInt());
-                    }
-                    break;
                 case 2: 
-                    if(myArray.isEmpty()){
-                        System.out.println("\n<<<Array is is Empty!>>>");
+                        if(myArray.isEmpty())
+                            System.out.println("\n<<<Array is is Empty!>>>");                    
+                        else
+                        myArray.ascendingSort();             
                         break;
-                    }else{
-                    myArray.ascendingSort();
-                    }
-                    break;
                 case 3:
-                     if(myArray.isEmpty()){
-                        System.out.println("\n<<<Array is is Empty!>>>");
+                        if(myArray.isEmpty())
+                            System.out.println("\n<<<Array is is Empty!>>>");                     
+                        else
+                        myArray.descendingSort();                
                         break;
-                    }else{
-                    myArray.descendingSort();
-                    }
-                    break;
                 case 4: 
-                     if(myArray.isEmpty()){
-                        System.out.println("\n<<<Array is is Empty!>>>");
+                        if(myArray.isEmpty())
+                            System.out.println("\n<<<Array is is Empty!>>>");
+                        else{
+                            myArray.viewArray();
+                            System.out.print("Enter index: ");
+                            int index = sc.nextInt();
+                            System.out.print("Enter new element: ");
+                            int data = sc.nextInt();
+                            myArray.edit(index,data);
+                        }
                         break;
-                    }else{
-                        myArray.viewArray();
-                        System.out.print("Enter index: ");
-                        int index = sc.nextInt();
-                        System.out.print("Enter new element: ");
-                        int data = sc.nextInt();
-                        myArray.edit(index,data);
-                    }
-                    break;
                 case 5:
-                      if(myArray.isEmpty()){
-                        System.out.println("\n<<<Array is is Empty!>>>");
+                        if(myArray.isEmpty())
+                            System.out.println("\n<<<Array is is Empty!>>>");   
+                        else{
+                            myArray.viewArray();
+                            System.out.print("Enter index to remove: ");
+                            myArray.remove(sc.nextInt());
+                          }
                         break;
-                    }else{
-                    myArray.viewArray();
-                    System.out.print("Enter index to remove: ");
-                    myArray.remove(sc.nextInt());
-                    }
-                    break;
                 case 6: 
-                     if(myArray.isEmpty()){
-                        System.out.println("\n<<<Array is is Empty!>>>");
-                        break;
-                    }else{
-                    myArray.viewArray();
-                    }
-                    break;
-               
+                        if(myArray.isEmpty())
+                            System.out.println("\n<<<Array is is Empty!>>>");                   
+                        else
+                        myArray.viewArray();                     
+                        break;            
                 default:
                     run =false;
                     break;
