@@ -2,17 +2,7 @@ package BinaryTree;
 
 import java.util.ArrayList;
 
-class Node{
-    int data;
-    Node left;
-    Node right;
-
-    Node(int x){
-        data = x;
-        left = null;
-        right = null;
-    }
-}
+ 
 // InOrder is Left Root Right
 public class BinaryTreeInOrder {
 
